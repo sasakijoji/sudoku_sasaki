@@ -1,0 +1,148 @@
+﻿<Window x:Class="sudoku_sasaki.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sudoku_sasaki"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800"  ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="116*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="211*"/>
+            <RowDefinition Height="181*"/>
+        </Grid.RowDefinitions>
+        <Canvas HorizontalAlignment="Left" Height="444" Grid.RowSpan="2" VerticalAlignment="Top" Width="450" Grid.Column="1" Margin="102,170,0,0" Grid.ColumnSpan="4">
+            <Canvas HorizontalAlignment="Left" Height="148" Canvas.Left="0" Canvas.Top="0" VerticalAlignment="Top" Width="150">
+                <Border HorizontalAlignment="Center" Height="155" Canvas.Left="0" Canvas.Top="0" VerticalAlignment="Center" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb1" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <ComboBox x:Name="cmb2" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0" />
+                        <ComboBox x:Name="cmb3" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb10" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0" />
+                        <ComboBox x:Name="cmb11" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb12" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb19" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0" />
+                        <ComboBox x:Name="cmb20" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb21" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="153" Canvas.Top="0" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb4" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb5" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb6" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb13" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb14" Width="50" Height="50" VerticalContentAlignment="Center" Margin="50,50,50,49"/>
+                        <ComboBox x:Name="cmb15" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb22" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb23" Width="50" Height="50" VerticalContentAlignment="Center" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb24" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="306" Canvas.Top="0" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb7" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb8" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb9" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb16" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb17" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb18" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb25" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb26" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb27" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="0" Canvas.Top="149" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb28" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb29" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb30" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb37" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb38" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb39" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb46" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb47" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb48" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="153" Canvas.Top="149" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb31" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb32" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb33" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb40" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb41" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb42" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb49" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb50" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb51" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="306" Canvas.Top="149" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb34" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb35" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb36" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb43" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb44" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb45" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb52" Height="50" VerticalContentAlignment="Center" VerticalAlignment="Top" Margin="0,100,100,0"/>
+                        <ComboBox x:Name="cmb53" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb54" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="0" Canvas.Top="299" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb55" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb56" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb57" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb64" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb65" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb66" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb73" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb74" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb75" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="153" Canvas.Top="299" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb58" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb59" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb60" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb67" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb68" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb69" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb76" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb77" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb78" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="155" Canvas.Left="306" Canvas.Top="299" Width="156" Background="Black" BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid Background="White">
+                        <ComboBox x:Name="cmb61" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmb62" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+                        <ComboBox x:Name="cmb63" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0"/>
+                        <ComboBox x:Name="cmb70" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                        <ComboBox x:Name="cmb71" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+                        <ComboBox x:Name="cmb72" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50,0,0"/>
+                        <ComboBox x:Name="cmb79" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+                        <ComboBox x:Name="cmb80" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0"/>
+                        <ComboBox x:Name="cmb81" Width="50" Height="50" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0"/>
+                    </Grid>
+                </Border>
+            </Canvas>
+        </Canvas>
+        <Button x:Name="BtnLoadNumbers" Content="問題読み込み" HorizontalAlignment="Left" Margin="54,185,0,0" VerticalAlignment="Top" Click="BtnLoadNumbers_Click" Height="43" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <Button x:Name="BtnInitializeData" Content="初期化" HorizontalAlignment="Left" Margin="54,249,0,0" VerticalAlignment="Top" Click="BtnInitializeData_Click" Height="43" Width="73" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <Button x:Name="BtnClearData" Content="やり直す" HorizontalAlignment="Left" Margin="54,422,0,0" VerticalAlignment="Top" Click="BtnClearData_Click" Height="43" Width="73" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <Button x:Name="BtnComfirmData" Content="確認する" HorizontalAlignment="Left" Margin="54,110,0,0" VerticalAlignment="Top" Click="BtnComfirmData_Click" Height="43" Width="73" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
