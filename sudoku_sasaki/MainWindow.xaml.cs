@@ -52,7 +52,6 @@ namespace sudoku_sasaki
                     this.BtnComfirmData.IsEnabled = true;
                 }
             }
-
         }
         /// <summary>
         ///値を画面に表示する
@@ -87,7 +86,6 @@ namespace sudoku_sasaki
                     }
                 }
             }
-
         }
         /// <summary>
         /// 初期化
