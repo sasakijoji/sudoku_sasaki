@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Shapes;
 
-using Nuits.Interception;
-
 namespace sudoku_sasaki
 {
     internal class ControlFile
@@ -46,7 +44,6 @@ namespace sudoku_sasaki
             new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0},
             new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0},
             new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0}
-
     };
 
         /// <summary>
@@ -137,14 +134,13 @@ namespace sudoku_sasaki
                 }
                 columnIndex++;
             }
-
             return true;
         }
         /// <summary>
         /// ③読み込んだcsvファイルのデータが9×9の配列範囲であることをチェックする
         /// </summary>
-        /// <param name="data"></param>
-        /// <param name="lines"></param>
+        /// <param name="data">81個のデータ</param>
+        /// <param name="lines">(行)9つのデータ</param>
         /// <returns></returns>
         private static bool CheckIfDetaFormatIs9x9(string[] data, List<string> lines, ref string errorMessage)
         {
@@ -161,8 +157,10 @@ namespace sudoku_sasaki
         /// <summary>
         /// ④csvファイルから読み込んだ値が範囲内の値であることをチェックする
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        /// <param name="data">81個のデータ</param>
+        /// <param name="errorMessage">エラーメッセージ</param>
+        /// <param name="columnIndex">列の配列番号</param>
+        /// <returns>true = 範囲内, false = 範囲外</returns>
         private static bool IsInRange(string[] data, ref string errorMessage, int columnIndex)
         {
             int rowIndex = 0;
@@ -201,14 +199,13 @@ namespace sudoku_sasaki
             return true;
         }
         /// <summary>
-        //行の数値がユニークかをチェック
+        /// 行の数値に重複があるかをチェック
         /// </summary>
-        /// <param name="rowIndex"></param>
-        /// <returns></returns>
+        /// <param name="columnIndex">列の配列番号</param>
+        /// <returns>true = 重複なし, false = 重複あり</returns>
         private static bool IsUniqueRowValues(int columnIndex)
         {
-
-            List<int> numbers = new List<int>();///番号
+            List<int> numbers = new List<int>();///取り出した値を評価するためにためておくリスト
             foreach (int value in ControlFile.values[columnIndex])
             {
                 switch (value)
@@ -280,17 +277,14 @@ namespace sudoku_sasaki
                         numbers.Add(value);
                         break;
                 }
-
-
             }
-
             return true;
         }
         /// <summary>
-        //列の数値がユニークかをチェック
+        //列の数値に重複があるかをチェック
         /// </summary>
-        /// <param name="rowIndex"></param>
-        /// <returns></returns>
+        /// <param name="rowIndex">行の配列番号</param>
+        /// <returns>true = 重複なし, false = 重複あり</returns>
         private static bool IsUniqueColumnValues(int rowIndex)
         {
             int value = 0;
@@ -374,7 +368,8 @@ namespace sudoku_sasaki
         /// Listの中に同じ番号がないかチェック
         /// </summary>
         /// <param name="item">値</param>
-        /// <param name="numbers">リスト</param>
+        /// <param name="numbers">取り出した値を評価するためにためておくリスト、9個保存して同じ番号が
+        /// 認められなければ newして使う</param>
         /// <returns>true = 同じ番号がある</returns>
         public static bool ContainsSameNumberInList(int item, List<int> numbers)
         {
@@ -390,16 +385,17 @@ namespace sudoku_sasaki
         /// <returns></returns>
         private static bool IsUnique3x3Values()
         {
-            int columnIndex = 0;
-            int rowIndex = 0;
-            int value = 0;
-            int roopIndex = 0;
-            int resetCounter = 1;///データをが9こになったらリセットする(初期値は1)
+            int columnIndex = 0;//列の配列番号
+            int rowIndex = 0;//行の配列番号
+            int value = 0;//値を入れるための変数
+            int roopIndex = 0;//ループを回すための番号
+            int resetCounter = 1;///データが9こになったらリセットする(初期値は1)
             int totalCountOfValues = ControlFile.values.Count * ControlFile.values[rowIndex].Count;//総データ数
-            int lastRowIndex = 0;
-            int lastColumnIndex = 0;
-            int valuesCountof3Blocks = 27;
+            int lastRowIndex = 0;//以前の行の配列番号
+            int lastColumnIndex = 0;//以前の列の配列番号
+            int valuesCountof3Blocks = 27;//3ブロックの値総数
             List<int> numbers = new List<int>();///番号
+            //データの数だけループ処理
             while (roopIndex < totalCountOfValues)
             {
 #if DEBUG
@@ -408,7 +404,6 @@ namespace sudoku_sasaki
                 if (columnIndex == 2 && rowIndex == 8)
                 {
                 }
-
 #endif
                 value = ControlFile.values[columnIndex][rowIndex];
                 switch (value)
@@ -500,9 +495,8 @@ namespace sudoku_sasaki
                     columnIndex = lastColumnIndex - 2;//2 column前の値を代入
                     rowIndex = lastRowIndex + 1;
                     numbers = new();
-
                 }
-                /// 行の番号が2.5.8のときの挙動
+                /// 行の配列番号が2.5.8のときの挙動
                 else if (rowIndex == 2 || rowIndex == 5 || rowIndex == 8)
                 {
                     lastRowIndex = rowIndex;
@@ -511,6 +505,7 @@ namespace sudoku_sasaki
                     columnIndex++;
                     rowIndex = lastRowIndex - 2;//2row前の値を代入
                 }
+                //それ以外の時の挙動
                 else
                 {
                     lastRowIndex = rowIndex;
@@ -519,11 +514,8 @@ namespace sudoku_sasaki
                     rowIndex++;
                 }
                 roopIndex++;
-
             }
-
             return true;
         }
-
     }
 }
